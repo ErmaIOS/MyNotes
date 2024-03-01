@@ -1,19 +1,20 @@
 //
-//  ViewController.swift
+//  SettingsModel.swift
 //  MyNotes
 //
-//  Created by Erma on 21/2/24.
+//  Created by Erma on 24/2/24.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingsModel: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
+    
 
-
+    
 }
-
