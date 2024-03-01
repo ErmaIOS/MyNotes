@@ -5,4 +5,9 @@
 //  Created by Erma on 24/2/24.
 //
 
-import Foundation
+import UIKit
+
+struct Setting{
+    var text: String
+    var image: String
+}

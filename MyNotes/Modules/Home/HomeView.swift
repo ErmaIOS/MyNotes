@@ -7,6 +7,11 @@
 
 import UIKit
 import SnapKit
+//ARC - automatic reference counting - автоматический подсчет ссылок
+
+// + 1
+
+// - 1
 
 protocol HomeViewProtocol {
     func successNotes(notes: [String])
@@ -55,6 +60,8 @@ class HomeView: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupNavigationItem()
+        
     }
     
     private func setupUI(){
@@ -92,7 +99,17 @@ class HomeView: UIViewController, UICollectionViewDelegate {
         
         
     }
-
+    private func setupNavigationItem() {
+        navigationItem.title = "Home"
+        let rightBarButtonItem = UIBarButtonItem(image:  UIImage(named: "settingsIcon"), style: .plain, target: self, action: #selector(settingsButtonTapped))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        rightBarButtonItem.tintColor = .black
+    }
+    
+    @objc func settingsButtonTapped(_ sender: UINavigationBar){
+        let vc = SettingsView()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 
@@ -122,3 +139,4 @@ extension HomeView: HomeViewProtocol {
         notesCollectionView.reloadData()
     }
 }
+
